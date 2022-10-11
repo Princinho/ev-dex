@@ -159,16 +159,113 @@ a:hover {
 }
 
 .search {
-  min-width: 70%;
+  min-width: 65%;
   font-size: 1rem;
-  padding: .5rem .8em;
+  padding: .5rem .8rem;
+  padding-left: 2.5em;
   border-radius: 0;
   border: 1px solid var(--clr-separators);
+  background-image: url("./images/search-line.svg");
+  background-repeat: no-repeat;
+  background-position: center left .5em;
 }
 
 .select-order {
   background: transparent;
   border: 1px solid var(--clr-separators);
-  min-width: 20%;
+  min-width: 30%;
   text-align: center;
+}
+.select-order option{
+  
+  background: white;
+  border-radius: 0;
+  padding: .5em .8em;
+}
+.vehicles-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
+  padding-top: 2rem;
+}
+.vehicle{
+  border: 1px solid var(--clr-separators);
+  position: relative;
+}
+.vehicle img{
+  object-fit: cover;
+  width:100%;
+}
+.vehicle__info{
+  padding: 0 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(3,1fr);
+  align-items: center;
+  
+}
+.vehicle__brand{
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--clr-primary-light);
+  grid-column: 1/ span 2;
+}
+.vehicle__name{
+  grid-column: 1/-1;
+  grid-row: 2;
+}
+.vehicle__price-label{
+  color: var(--clr-primary-light);
+  grid-row: 3;
+  grid-column: 1;
+}
+.vehicle__price{
+  font-weight: 600;
+  display: inline-block;
+  grid-row: 3;
+  grid-column: 2;
+}
+.vehicle__old-price{
+  color: var(--clr-primary-light);
+  font-size: .8em;
+  font-weight: 600;
+  text-decoration: line-through;
+  display: inline-block;
+  grid-row: 3;
+}
+.btn-like,.btn-add-to-cart{
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+.btn-like{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: rgba(256, 256, 256, .7);
+  border: 1px solid var(--clr-separators);
+  transition: border 250ms ease, background-color 250ms ease;
+
+}
+.btn-like:hover,.btn-like:focus{
+  background-color: white;
+}
+.btn-like:focus{
+  outline: 2px solid var(--clr-accent);
+  border: none;
+}
+.btn-add-to-cart{
+  background-color: var(--clr-accent);
+  grid-row: 3;
+  grid-column: -2/-1;
+  justify-self: end;
+}
+.btn-add-to-cart img,.btn-like img{
+  width: 50%;
 }
