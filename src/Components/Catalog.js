@@ -1,5 +1,4 @@
 import React from "react";
-import searchIcon from "../images/search-line.svg"
 import Vehicle from "./Vehicle";
 export default function Catalog(props) {
     return (
