@@ -1,0 +1,243 @@
+{
+    "div": {
+      "@class": "list-item",
+      "div": {
+        "@class": "data-wrapper",
+        "#comment": [
+          "",
+          ""
+        ],
+        "div": [
+          {
+            "@class": "img",
+            "a": {
+              "@href": "/car/1164/Renault-Zoe-ZE50-R110",
+              "img": {
+                "@src": "/img/common/ajax-loader.gif",
+                "@data-src-retina": "/img/auto/Renault_Zoe_2020/Renault_Zoe_2020-01-thumb@2x.jpg",
+                "@data-src": "/img/auto/Renault_Zoe_2020/Renault_Zoe_2020-01-thumb.jpg",
+                "@data-src": "/img/auto/Renault_Zoe_2020/Renault_Zoe_2020-01-thumb.jpg",
+                "@data-src": "/img/auto/Renault_Zoe_2020/Renault_Zoe_2020-01-thumb.jpg",
+                "@alt": "Renault Zoe ZE50 R110"
+              }
+            }
+          },
+          {
+            "@class": "title-wrap",
+            "h2": {
+              "a": {
+                "@href": "/car/1164/Renault-Zoe-ZE50-R110",
+                "@class": "title",
+                "span": [
+                  {
+                    "@class": "renault",
+                    "#text": "Renault"
+                  },
+                  {
+                    "@class": "model",
+                    "#text": "Zoe ZE50 R110"
+                  }
+                ]
+              }
+            },
+            "span": [
+              {
+                "@class": "date_from hidden",
+                "#text": "1572562800"
+              },
+              {
+                "@class": "rank hidden",
+                "#text": "927"
+              },
+              {
+                "@class": "id hidden",
+                "#text": "1164"
+              },
+              {
+                "@class": "current"
+              }
+            ],
+            "div": {
+              "@class": "subtitle",
+              "span": {
+                "@class": "battery",
+                "#text": "52"
+              },
+              "#text": [
+                "Battery Electric Vehicle |",
+                "kWh"
+              ]
+            }
+          },
+          {
+            "@class": "icons",
+            "span": [
+              {
+                "@title": "Towbar not possible",
+                "@class": "towweight fas fa-trailer",
+                "@style": "color: lightgrey;"
+              },
+              {
+                "@title": "Front Wheel Drive",
+                "span": [
+                  {
+                    "@class": "voor fas fa-circle",
+                    "@style": "padding-left: 10px; margin-right: -3px;"
+                  },
+                  {
+                    "@class": "voor far fa-circle"
+                  }
+                ]
+              },
+              {
+                "@title": "plug-type2-ccs",
+                "@class": "plug-type2-ccs hidden",
+                "#text": "Type 2 CCS"
+              },
+              {
+                "@class": "shape-hatchback hidden",
+                "#text": "Hatchback"
+              },
+              {
+                "@title": "Market Segment",
+                "@class": "size-b",
+                "@style": "padding-left: 10px;",
+                "#text": "B"
+              },
+              {
+                "@title": "Number of seats",
+                "@class": "seats-5 fas fa-user",
+                "@style": "padding-left: 10px;"
+              },
+              {
+                "@title": "Number of seats",
+                "#text": "5"
+              }
+            ]
+          },
+          {
+            "@class": "specs",
+            "p": [
+              {
+                "@class": "left",
+                "span": [
+                  {
+                    "@class": "tag",
+                    "#text": "0 - 100"
+                  },
+                  {
+                    "@class": "acceleration",
+                    "#text": "11.4 sec"
+                  }
+                ]
+              },
+              {
+                "@class": "left",
+                "span": [
+                  {
+                    "@class": "tag",
+                    "#text": "Top Speed"
+                  },
+                  {
+                    "@class": "topspeed",
+                    "#text": "135 km/h"
+                  }
+                ]
+              },
+              {
+                "@class": "left",
+                "span": [
+                  {
+                    "@class": "tag",
+                    "#text": "Range"
+                  },
+                  {
+                    "@class": "erange_real",
+                    "#text": "315 km"
+                  }
+                ]
+              },
+              {
+                "@class": "left",
+                "span": [
+                  {
+                    "@class": "tag",
+                    "#text": "Efficiency"
+                  },
+                  {
+                    "@class": "efficiency",
+                    "#text": "165 Wh/km"
+                  }
+                ]
+              },
+              {
+                "@class": "left",
+                "span": [
+                  {
+                    "@class": "tag",
+                    "#text": "Fastcharge"
+                  },
+                  {
+                    "@class": "fastcharge_speed_print",
+                    "#text": "230 km/h"
+                  },
+                  {
+                    "@class": "fastcharge_speed hidden",
+                    "#text": "230"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@class": "pricing align-right",
+            "span": [
+              {
+                "@class": "price_buy",
+                "span": [
+                  {
+                    "@class": "country_de",
+                    "@title": "Price in Germany before incentives",
+                    "#text": "€36,840"
+                  },
+                  {
+                    "@class": "flag-icon flag-icon-de"
+                  }
+                ]
+              },
+              {
+                "@class": "price_buy",
+                "span": [
+                  {
+                    "@class": "country_nl",
+                    "@title": "Price in The Netherlands before incentives",
+                    "#text": "€34,790"
+                  },
+                  {
+                    "@class": "flag-icon flag-icon-nl"
+                  }
+                ]
+              },
+              {
+                "@class": "price_buy",
+                "span": [
+                  {
+                    "@class": "country_uk",
+                    "@title": "Price in the United Kingdom after incentives",
+                    "#text": "N/A"
+                  },
+                  {
+                    "@class": "flag-icon flag-icon-gb"
+                  }
+                ]
+              },
+              {
+                "@class": "price price_filter40-60 hidden",
+                "#text": "0.68"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }

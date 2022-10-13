@@ -1,10 +1,9 @@
 import React from "react"
 export default function PriceRange(props) {
-    const sliderRef = React.useRef(null)
-    const lowPriceLimit = 1000, highPriceLimit = 10000
+    const {lowPriceLimit,highPriceLimit,minPrice,maxPrice}=props
     const [priceData, setPriceData] = React.useState({
-        minPrice: 2500,
-        maxPrice: 7000
+        minPrice: minPrice,
+        maxPrice: maxPrice
     })
     const MIN_PRICE_SLIDER = "minPriceSliderValue",
         MAX_PRICE_SLIDER = "maxPriceSliderValue",

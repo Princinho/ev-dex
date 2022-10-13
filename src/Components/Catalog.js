@@ -1,6 +1,14 @@
 import React from "react";
 import Vehicle from "./Vehicle";
+const url = './EVs.json'
 export default function Catalog(props) {
+    const [vehiclesData, setVehiclesData] = React.useState([])
+    React.useEffect(
+        () => {
+            fetch(url, { mode: 'no-cors' }).then(res => res.json()).then(data => setVehiclesData(data))
+        }, []
+    )
+
     return (
         <section className="main-content">
             <h1 className="section-title">Catalog</h1>
@@ -14,9 +22,11 @@ export default function Catalog(props) {
                 </select>
             </div>
             <div className="vehicles-list">
-                <Vehicle/>
-                <Vehicle image="https://ev-database.org/img/auto/BMW_iX_2022/BMW_iX_2022-01.jpg"/>
-                <Vehicle image="https://ev-database.org/img/auto/Kia_EV6_GT_2021/Kia_EV6_GT_2021-01.jpg"/>
+                {vehiclesData.map(vehicle=>{
+                    return <Vehicle data={vehicle}/>
+                })}
+                
+
             </div>
         </section>
     )
