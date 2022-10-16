@@ -15,10 +15,12 @@ export default function Vehicle(props) {
             <button className="btn-like"><img src={heart} alt="add to wishlist" /></button>
             <div className="vehicle__info">
                 <span className="vehicle__brand__label">Brand:<span className="vehicle__brand">{vehicle.brand}</span></span>
-                <h3 className="vehicle__name">{vehicle.model}</h3>
+                <h3 className="vehicle__name" style={{fontSize:vehicle.model.length>=25?"1em":"1.2em"}}>{vehicle.model}</h3>
                 <span className="vehicle__price-label">Price:</span>
                 <span className="vehicle__price">{parseInt(priceXOF).toLocaleString("tg-TG", {style:"currency", currency:"XOF"})}</span>
                 <span className="vehicle__old-price">{parseInt(vehicle.priceEurDE).toLocaleString("de-DE", {style:"currency", currency:"EUR"})}</span>
+                <span className="vehicle__range-label">Range:</span>
+                <span className="vehicle__range">{vehicle.realRangeKm} km</span>
                 <button className="btn-add-to-cart"><img src={bag} alt="add to cart" /></button>
             </div>
         </div>
