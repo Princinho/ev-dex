@@ -1,9 +1,9 @@
 import React from "react";
-export default function Checkbox(props) {
+export default function Checkbox({name}) {
     return (
 
-        <label className="container">Two
-            <input type="checkbox" />
+        <label className="container">{name}
+            <input name={name} type="checkbox" />
             <span className="checkmark"></span>
         </label>
     )

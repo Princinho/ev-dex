@@ -4,27 +4,32 @@ import Sidebar from "./Components/Sidebar"
 import Catalog from "./Components/Catalog"
 import PriceRange from './Components/PriceRange';
 import React from 'react';
-const url = 'https://ev-database.org/#sort:path~type~order=.rank~number~desc|range-slider-range:prev~next=0~1200|range-slider-acceleration:prev~next=2~23|range-slider-topspeed:prev~next=110~450|range-slider-battery:prev~next=10~200|range-slider-towweight:prev~next=0~2500|range-slider-fastcharge:prev~next=0~1500|paging:currentPage=0|paging:number=9'
-
+const url = './EVdata.json'
 function App() {
+  const [priceRange, setPriceRange] = React.useState({ min: 10000, max: 100000 })
   const [pageData, setPageData] = React.useState("")
-  // React.useEffect(()=>{
-  //   getAllImages()
-  // }, [])
-  // // function getAllImages() {
-  // //   const options = {
-  // //     mode: 'no-cors'
-  // //   }
-  // //   fetch("./Components/test-data.json", options)
-  // //     .then(response => response.json())
-  // //     .then(data => setPageData(data.slice(100,200)))
-  // // }
-  console.log("Page is ",pageData)
+  const [vehiclesData, setVehiclesData] = React.useState([])
+  React.useEffect(
+    () => {
+      fetch(url, { mode: 'no-cors' }).then(res => res.json()).then(data => setVehiclesData(data))
+    }, []
+  )
+  const brands = vehiclesData.reduce((prevBrands, currentVehicle) => {
+    const newBrand = prevBrands.some(b => b == currentVehicle.brand) ? null : currentVehicle.brand
+    return newBrand ? [...prevBrands, newBrand] : prevBrands
+  }, [])
+  brands.sort()
+  // console.log(brands)
+  function updatePrice(min, max) {
+    setPriceRange({ min: min, max: max })
+  }
+
   return (
     <>
-      <Sidebar />
+      <Sidebar searchSettings={{ minPrice: 10000, maxPrice: 100000, lowPriceLimit: 10000, highPriceLimit: 300000, brands: brands }}
+        updatePrice={updatePrice} />
       <Header />
-      <Catalog />
+      <Catalog min={priceRange.min} max={priceRange.max} vehiclesData={vehiclesData} />
       <div>{pageData}</div>
     </>
   );

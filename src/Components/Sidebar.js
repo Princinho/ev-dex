@@ -4,7 +4,8 @@ import homeIcon from "../images/home-line.svg"
 import { Link } from "react-router-dom"
 import PriceRange from "./PriceRange"
 import Checkbox from "./Checkbox"
-function Sidebar(props) {
+function Sidebar({ searchSettings, updatePrice }) {
+    const { minPrice, maxPrice, lowPriceLimit, highPriceLimit, brands } = searchSettings
     return (
         <aside className="sidebar">
             <Link className="main-nav-link logo">
@@ -19,10 +20,15 @@ function Sidebar(props) {
             <Link className="sub-nav-item location">
                 <img src={homeIcon} alt="Home icon" /> Main Page &gt; <span>Catalog</span></Link>
             <div className="sidebar-inner-wrapper">
-                <PriceRange lowPriceLimit={10000} highPriceLimit={300000} minPrice={25000} maxPrice={100000} />
-                <div style={{display:"flex",flexDirection:"column",marginTop:"2em"}}>
-                    <Checkbox/>
-                    <Checkbox/>
+                <PriceRange lowPriceLimit={lowPriceLimit}
+                    highPriceLimit={highPriceLimit}
+                    minPrice={minPrice}
+                    maxPrice={maxPrice}
+                    updatePrice={(min, max) => updatePrice(min, max)} />
+                <div style={{ display: "flex", flexDirection: "column", marginTop: "2em",height:"10em",overflowY:"scroll",overflowX:"hidden" }}>
+                    {(brands.map(b => {
+                        return <Checkbox key={b} name={b} />
+                    }))}
                 </div>
             </div>
         </aside>

@@ -1,6 +1,7 @@
 import React from "react"
 export default function PriceRange(props) {
-    const {lowPriceLimit,highPriceLimit,minPrice,maxPrice}=props
+    const toXOF = 655
+    const { lowPriceLimit, highPriceLimit, minPrice, maxPrice } = props
     const [priceData, setPriceData] = React.useState({
         minPrice: minPrice,
         maxPrice: maxPrice
@@ -19,18 +20,18 @@ export default function PriceRange(props) {
         if (newPrice > highPriceLimit) newPrice = highPriceLimit
 
         setPriceData(prev => ({ ...prev, maxPrice: newPrice }))
+        props.updatePrice(priceData.minPrice, priceData.maxPrice)
     }
     function changeMinPrice(event) {
         let newPrice = parseInt(event.target.value)
-        // console.log(`low price limit: ${lowPriceLimit}`)
         if (newPrice < lowPriceLimit) newPrice = lowPriceLimit
         if (newPrice > priceData.maxPrice - MIN_GAP) { newPrice = priceData.maxPrice - MIN_GAP }
         setPriceData(prev => ({ ...prev, minPrice: newPrice }))
+        props.updatePrice(priceData.minPrice, priceData.maxPrice)
 
     }
-    console.log(priceData)
-    const leftOffset=(priceData.minPrice - lowPriceLimit) / (highPriceLimit - lowPriceLimit) * 100
-    const rightOffset=100 - ((priceData.maxPrice - lowPriceLimit) / (highPriceLimit - lowPriceLimit) * 100)
+    const leftOffset = (priceData.minPrice - lowPriceLimit) / (highPriceLimit - lowPriceLimit) * 100
+    const rightOffset = 100 - ((priceData.maxPrice - lowPriceLimit) / (highPriceLimit - lowPriceLimit) * 100)
     return (
 
         <div className="wrapper">
@@ -40,30 +41,36 @@ export default function PriceRange(props) {
             <div className="price-input">
                 <div className="field">
                     <span>Min</span>
-                    <input type="number" onChange={changeMinPrice} name={MIN_PRICE_TXT} min={lowPriceLimit} max={highPriceLimit} className="input-min" value={priceData.minPrice} />
+                    <input type="number" onInput={changeMinPrice} name={MIN_PRICE_TXT} min={lowPriceLimit} max={highPriceLimit} className="input-min" value={priceData.minPrice} />
                 </div>
                 <div className="separator">-</div>
                 <div className="field">
                     <span>Max</span>
-                    <input type="number" onChange={changeMaxPrice} name={MAX_PRICE_TXT} min={lowPriceLimit} max={highPriceLimit} className="input-max" value={priceData.maxPrice} />
+                    <input type="number" onInput={changeMaxPrice} name={MAX_PRICE_TXT} min={lowPriceLimit} max={highPriceLimit} className="input-max" value={priceData.maxPrice} />
                 </div>
+            </div>
+            <div style={{ height: "2rem",fontSize:".8rem",fontWeight:"600",letterSpacing:".05rem", width: "100%", backgroundColor: "var(--clr-separators)", marginBottom: "2em", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <span>{parseInt(priceData.minPrice * toXOF).toLocaleString("tg-TG", { style: "currency", currency: "XOF" })}</span>
+                <span style={{margin:".5em"}}>-</span>
+                <span>{parseInt(priceData.maxPrice * toXOF).toLocaleString("tg-TG", { style: "currency", currency: "XOF" })}</span>
             </div>
             <div className="slider">
                 <div className="progress"
                     style={{
-                        left:leftOffset>=0?`${leftOffset}%`:"0%",
-                        right: rightOffset>=0?`${rightOffset}%`:"0%"
+                        left: leftOffset >= 0 ? `${leftOffset}%` : "0%",
+                        right: rightOffset >= 0 ? `${rightOffset}%` : "0%"
                     }}
                 ></div>
             </div>
             <div className="range-input">
 
-                <input type="range" onChange={changeMinPrice}
+                <input type="range" onInput={changeMinPrice}
                     ref={minPriceSliderRef}
                     name={MIN_PRICE_SLIDER} value={priceData.minPrice}
-                    className="range-min" min={lowPriceLimit} max={highPriceLimit} step="100" />
+                    className="range-min" min={lowPriceLimit} max={highPriceLimit} step="100"
+                />
 
-                <input type="range" onChange={changeMaxPrice}
+                <input type="range" onInput={changeMaxPrice}
                     ref={maxPriceSliderRef}
                     name={MAX_PRICE_SLIDER} value={priceData.maxPrice}
                     className="range-max" min={lowPriceLimit} max={highPriceLimit} step="100" />
