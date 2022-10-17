@@ -13,7 +13,7 @@ export default function Catalog({ min, max,
         if (order == NAME)
             vehicles.sort((v1, v2) => {
                 // console.log(v1,v2)
-                return v2.model - v1.model
+                return v2.model.localeCompare(v1.model)
             })
         if (order == RANGE)
             vehicles.sort((v1, v2) => v2.realRangeKm - v1.realRangeKm)

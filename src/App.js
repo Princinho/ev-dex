@@ -7,7 +7,6 @@ import React from 'react';
 const url = './EVdata.json'
 function App() {
   const [priceRange, setPriceRange] = React.useState({ min: 10000, max: 100000 })
-  const [pageData, setPageData] = React.useState("")
   const [vehiclesData, setVehiclesData] = React.useState([])
   const [selectedBrands, setSelectedBrands] = React.useState([])
   const [order, setOrder] = React.useState(NAME)
@@ -19,7 +18,7 @@ function App() {
     }, []
   )
   const brands = vehiclesData.reduce((prevBrands, currentVehicle) => {
-    const newBrand = prevBrands.some(b => b == currentVehicle.brand) ? null : currentVehicle.brand
+    const newBrand = prevBrands.some(b => b === currentVehicle.brand) ? null : currentVehicle.brand
     return newBrand ? [...prevBrands, newBrand] : prevBrands
   }, [])
   brands.sort()
@@ -64,10 +63,9 @@ function App() {
         showVehicleDetails={showVehicleDetails}
       />
 
-      {selectedVehicleId != -1 ?
-        <VehicleDetails vehicle={vehiclesData.find(v => v.id == selectedVehicleId)} close={() => setSelectedVehicleId(-1)}
+      {selectedVehicleId !== -1 ?
+        <VehicleDetails vehicle={vehiclesData.find(v => v.id === selectedVehicleId)} close={() => setSelectedVehicleId(-1)}
         /> : ""}
-      <div>{pageData}</div>
     </>
   );
 }

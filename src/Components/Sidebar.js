@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import logo from "../images/logo.png"
 import homeIcon from "../images/home-line.svg"
 import { Link } from "react-router-dom"
-import PriceRange from "./PriceRange"
 import Checkbox from "./Checkbox"
 import RangePicker from "./RangePicker"
 function Sidebar({ searchSettings, updatePrice,updateRange }) {
@@ -11,16 +10,12 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
         maxPrice,
         lowPriceLimit,
         highPriceLimit,
-        minRange,
-        maxRange,
-        lowRangeLimit,
-        highRangeLimit,
         brands,
         updateBrands } = searchSettings
     const [selectedBrands, setSelectedBrands] = React.useState([])
     function swapBrand(brand) {
-        if (selectedBrands.some(b => b == brand)) {
-            setSelectedBrands(selectedBrands.filter(b => b != brand))
+        if (selectedBrands.some(b => b === brand)) {
+            setSelectedBrands(selectedBrands.filter(b => b !== brand))
         } else {
             setSelectedBrands([...selectedBrands, brand])
         }
@@ -80,7 +75,7 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
                                 swapBrand(b)
 
                             }}
-                            checked={selectedBrands.some(brand => brand == b)} />
+                            checked={selectedBrands.some(brand => brand === b)} />
                     }))}
                 </div>
             </div>
