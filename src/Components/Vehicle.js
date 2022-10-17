@@ -4,13 +4,13 @@ import heart from "../images/heart-line.svg"
 export default function Vehicle(props) {
     
     const vehicle = props.data
-    const showDetails = props.showDetails
+    const showDetails = props.showVehicleDetails
     const priceXOF=655*parseInt(vehicle.priceEurDE)
 
     return (
-        <div className="vehicle" onClick={() => { showDetails(props.id) }}>
+        <div className="vehicle" onClick={() => { showDetails() }}>
             <img className="vehicle__image"
-                src={vehicle.images[1] || "https://ev-database.org/img/auto/Tesla_Model_X_2021/Tesla_Model_X_2021-01.jpg"}
+                src={vehicle.images[1] }
                 alt="" />
             <button className="btn-like"><img src={heart} alt="add to wishlist" /></button>
             <div className="vehicle__info">

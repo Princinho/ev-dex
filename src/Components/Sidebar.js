@@ -25,7 +25,6 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
             setSelectedBrands([...selectedBrands, brand])
         }
     }
-    console.log(searchSettings)
     useEffect(() => {
         updateBrands(selectedBrands)
     }, [selectedBrands])

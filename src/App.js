@@ -1,7 +1,8 @@
 import './App.css';
 import Header from './Components/Header';
 import Sidebar from "./Components/Sidebar"
-import {Catalog,NAME,RANGE,PRICE} from "./Components/Catalog"
+import VehicleDetails from './Components/VehicleDetails';
+import { Catalog, NAME, RANGE, PRICE } from "./Components/Catalog"
 import React from 'react';
 const url = './EVdata.json'
 function App() {
@@ -9,18 +10,9 @@ function App() {
   const [pageData, setPageData] = React.useState("")
   const [vehiclesData, setVehiclesData] = React.useState([])
   const [selectedBrands, setSelectedBrands] = React.useState([])
-  const [order,setOrder]=React.useState(NAME)
+  const [order, setOrder] = React.useState(NAME)
   const [evRange, setEvRange] = React.useState({ min: 0, max: 2000 })
-  // if (vehiclesData.length > 0) {
-  //   setEvRange({
-  //     min: vehiclesData.reduce((a, b) => {
-  //       return a.realRangeKm < b.realRangeKm ? a : b
-  //     }),
-  //     max: vehiclesData.reduce((a, b) => {
-  //       return a.realRangeKm > b.realRangeKm ? a : b
-  //     })
-  //   })
-  // }
+  const [selectedVehicleId, setSelectedVehicleId] = React.useState(-1)
   React.useEffect(
     () => {
       fetch(url, { mode: 'no-cors' }).then(res => res.json()).then(data => setVehiclesData(data))
@@ -39,9 +31,16 @@ function App() {
     setEvRange({ min: min, max: max })
     setOrder(RANGE)
   }
-  console.log("Order from app.js:",order)
   function updateBrands(updatedBrands) {
     setSelectedBrands(updatedBrands)
+  }
+  function showVehicleDetails(id) {
+    setSelectedVehicleId(id)
+    
+
+  }
+  function changeOrder(order) {
+    setOrder(order)
   }
   return (
     <>
@@ -50,7 +49,7 @@ function App() {
         minRange: 200,
         maxRange: 500,
         lowRangeLimit: 0,
-        highRangeLimit:1000,
+        highRangeLimit: 1000,
         brands: brands,
         updateBrands: updateBrands
       }}
@@ -58,9 +57,16 @@ function App() {
         updateRange={updateRange} />
       <Header />
       <Catalog min={priceRange.min} max={priceRange.max} order={order}
-      minRange={evRange.min}
-      maxRange={evRange.max}
-       brands={selectedBrands} vehiclesData={vehiclesData} />
+        minRange={evRange.min}
+        maxRange={evRange.max}
+        brands={selectedBrands} vehiclesData={vehiclesData}
+        changeOrder={changeOrder}
+        showVehicleDetails={showVehicleDetails}
+      />
+
+      {selectedVehicleId != -1 ?
+        <VehicleDetails vehicle={vehiclesData.find(v => v.id == selectedVehicleId)} close={() => setSelectedVehicleId(-1)}
+        /> : ""}
       <div>{pageData}</div>
     </>
   );
