@@ -5,6 +5,7 @@ import VehicleDetails from './Components/VehicleDetails';
 import { Catalog, NAME, RANGE, PRICE } from "./Components/Catalog"
 import React from 'react';
 const url = './EVdata.json'
+const LOCAL_STORAGE_KEY = "evDexFavorites"
 function App() {
   const [priceRange, setPriceRange] = React.useState({ min: 10000, max: 100000 })
   const [vehiclesData, setVehiclesData] = React.useState([])
@@ -12,11 +13,35 @@ function App() {
   const [order, setOrder] = React.useState(NAME)
   const [evRange, setEvRange] = React.useState({ min: 0, max: 2000 })
   const [selectedVehicleId, setSelectedVehicleId] = React.useState(-1)
+  const [favorites, setFavorites] = React.useState([])
   React.useEffect(
     () => {
-      fetch(url, { mode: 'no-cors' }).then(res => res.json()).then(data => setVehiclesData(data))
-    }, []
+      let vehicles = []
+      if (vehiclesData.length == 0) {
+        fetch(url, { mode: 'no-cors' }).then(res => res.json()).then(data => {
+          vehicles = data.map(vehicle => { return { ...vehicle, isFavorite: favorites.some(f => f == vehicle.id) } })
+          setVehiclesData(vehicles)
+        })
+      } else {
+        setVehiclesData(prevData => prevData.map(vehicle => { return { ...vehicle, isFavorite: favorites.some(f => f == vehicle.id) } }))
+      }
+
+
+    }, [favorites]
   )
+console.log("Rendering app")
+  React.useEffect(() => {
+    if (localStorage.getItem(LOCAL_STORAGE_KEY)) {
+      setFavorites(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)))
+    }
+  }, [])
+  React.useEffect(() => {
+    if (favorites.length > 0) {
+      {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(favorites))
+      }
+    }
+  }, [favorites])
   const brands = vehiclesData.reduce((prevBrands, currentVehicle) => {
     const newBrand = prevBrands.some(b => b === currentVehicle.brand) ? null : currentVehicle.brand
     return newBrand ? [...prevBrands, newBrand] : prevBrands
@@ -35,8 +60,11 @@ function App() {
   }
   function showVehicleDetails(id) {
     setSelectedVehicleId(id)
-    
-
+  }
+  function toggleFavorite(id) {
+    if (favorites.some(fav => fav == id)) setFavorites(prev => prev.filter(fav => fav != id))
+    else
+      setFavorites(prev => [...prev, id])
   }
   function changeOrder(order) {
     setOrder(order)
@@ -61,6 +89,7 @@ function App() {
         brands={selectedBrands} vehiclesData={vehiclesData}
         changeOrder={changeOrder}
         showVehicleDetails={showVehicleDetails}
+        toggleFavorite={(id) => { toggleFavorite(id) }}
       />
 
       {selectedVehicleId !== -1 ?

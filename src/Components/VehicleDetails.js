@@ -1,7 +1,7 @@
 import React from "react";
 export default function VehicleDetails({ vehicle, close }) {
     // console.log(vehicle)
-    return (<div className="details"
+    return (<div className="details" style={{ }}
     >
         <button onClick={() => { close() }}
             style={{
@@ -22,7 +22,7 @@ export default function VehicleDetails({ vehicle, close }) {
         >
             X
         </button>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+       
             <div style={{ display: "grid",columnGap:"1em",rowGap:".3em", gridTemplateColumns: "1fr 1fr" }}>
                 <span>Brand:</span><span>{vehicle.brand}</span>
                 <span>Model:</span><span>{vehicle.model}</span>
@@ -39,8 +39,8 @@ export default function VehicleDetails({ vehicle, close }) {
                 <span>Price UK:</span><span>{parseInt(vehicle.priceEurUK).toLocaleString("en-GB", {style:"currency", currency:"GBP"})}</span>
                 <span>Price CFA:</span><span>{parseInt(vehicle.priceEurDE*655).toLocaleString("tg-TG", {style:"currency", currency:"XOF"})}</span>
             </div>
-            <img src={vehicle.images[1]} alt={`${vehicle.brand} ${vehicle.model}`} style={{ width: "70%" }} />
-        </div>
+            <img className="vehicle-detail-image" src={vehicle.images[1]} alt={`${vehicle.brand} ${vehicle.model}`} style={{ width: "70%" }} />
+        
     </div>)
 }
 
