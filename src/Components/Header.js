@@ -20,7 +20,7 @@ export default function Header(props) {
                     </div>
                     <div className="sub-nav">
                     <Link className="sub-nav-link">Compare products</Link>
-                    <Link className="sub-nav-link">Wishlist-Empty</Link>
+                    <Link className="sub-nav-link" to="/wishlist">Wishlist-Empty</Link>
                     <Link className="sub-nav-link cart">2 Products - $1000</Link>
                     </div>
                     

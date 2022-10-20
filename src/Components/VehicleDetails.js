@@ -26,10 +26,10 @@ export default function VehicleDetails({ vehicle, close }) {
             <div style={{ display: "grid",columnGap:"1em",rowGap:".3em", gridTemplateColumns: "1fr 1fr" }}>
                 <span>Brand:</span><span>{vehicle.brand}</span>
                 <span>Model:</span><span>{vehicle.model}</span>
-                <span>Battery:</span><span>{vehicle.batterySizeKwh}</span>
+                <span>Battery:</span><span>{vehicle.batterySizeKwh} Kwh</span>
                 <span>Shape:</span><span>{vehicle.shape}</span>
                 <span>Seats:</span><span>{vehicle.seats}</span>
-                <span>0-100Km/h:</span><span>{vehicle.accelerationSec}</span>
+                <span>0-100Km/h:</span><span>{vehicle.accelerationSec} sec</span>
                 <span>Top Speed:</span><span>{vehicle.topSpeed} Km/h</span>
                 <span>Real Range:</span><span>{vehicle.realRangeKm} Km</span>
                 <span>Efficiency:</span><span>{vehicle.efficiencyWhPerKm} Wh/Km</span>
