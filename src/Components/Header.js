@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 export default function Header(props) {
+    const location = useLocation().pathname
     return (
         <>
-            
+
             <header>
                 <nav className="main-nav">
                     <div className="main-nav-group">
@@ -19,11 +21,11 @@ export default function Header(props) {
                         <Link className="main-nav-link">Prince</Link>
                     </div>
                     <div className="sub-nav">
-                    <Link className="sub-nav-link">Compare products</Link>
-                    <Link className="sub-nav-link" to="/wishlist">Wishlist-Empty</Link>
-                    <Link className="sub-nav-link cart">2 Products - $1000</Link>
+                        <Link className="sub-nav-link">Compare products</Link>
+                        <Link className={`sub-nav-link ${location == "/wishlist" ? "active" : ""}`} to="/wishlist">Wishlist-Empty</Link>
+                        <Link className="sub-nav-link cart">2 Products - $1000</Link>
                     </div>
-                    
+
                 </nav>
             </header>
         </>

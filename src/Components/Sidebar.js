@@ -25,7 +25,7 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
     }, [selectedBrands])
     return (
         <aside className="sidebar">
-            <Link className="main-nav-link logo">
+            <Link className="main-nav-link logo" to="/">
                 <img className="main-nav-logo-img" src={logo} alt="EV Dex logo" />
                 <span className="brand-wrapper">
                     <span className="brand">EV-DEX</span>
@@ -37,12 +37,6 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
             <Link className="sub-nav-item location">
                 <img src={homeIcon} alt="Home icon" /> Main Page &gt; <span>Catalog</span></Link>
             <div className="sidebar-inner-wrapper">
-                {/* <PriceRange lowPriceLimit={lowPriceLimit}
-                    highPriceLimit={highPriceLimit}
-                    minPrice={minPrice}
-                    maxPrice={maxPrice}
-                    updatePrice={(min, max) => updatePrice(min, max)}
-                /> */}
 
                 <RangePicker lowLimit={lowPriceLimit}
                     highLimit={highPriceLimit}

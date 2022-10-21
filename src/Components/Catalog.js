@@ -24,35 +24,35 @@ export default function Catalog({ min, max,
         vehiclesFiltered = vehiclesFiltered.filter(v => brands.some(b => b == v.brand))
     }
     if (search) {
-        vehiclesFiltered = vehiclesFiltered.filter(v => 
+        vehiclesFiltered = vehiclesFiltered.filter(v =>
             v.model.toLowerCase().includes(search.toLowerCase())
-            ||v.brand.toLowerCase().includes(search.toLowerCase()))
-            
+            || v.brand.toLowerCase().includes(search.toLowerCase()))
+
     }
     orderVehicles(vehiclesFiltered)
 
 
     return (
-        <section className="main-content">
-            <h1 className="section-title">Catalog</h1>
-            <div className="search-bar">
-                <input type="text" name="search" value={search} onChange={(e) => { setSearch(e.target.value) }} className="search" placeholder="Search among 100+ EVs">
-                </input>
-                <select name="order" value={order} onChange={({ target }) => { changeOrder(target.value) }} className="select-order">
-                    <option value={NAME} >Name</option>
-                    <option value={PRICE} >Price</option>
-                    <option value={RANGE} >Range</option>
-                </select>
-            </div>
-            <div className="vehicles-list">
-                {vehiclesFiltered.map(vehicle => {
-                    return <Vehicle key={vehicle.id} id={vehicle.id} data={vehicle}
-                        showVehicleDetails={() => showVehicleDetails(vehicle.id)}
-                        toggleFavorite={toggleFavorite} />
-                })}
+    <>
+        <h1 className="section-title">Catalog</h1>
+        <div className="search-bar">
+            <input type="text" name="search" value={search} onChange={(e) => { setSearch(e.target.value) }} className="search" placeholder="Search among 100+ EVs">
+            </input>
+            <select name="order" value={order} onChange={({ target }) => { changeOrder(target.value) }} className="select-order">
+                <option value={NAME} >Name</option>
+                <option value={PRICE} >Price</option>
+                <option value={RANGE} >Range</option>
+            </select>
+        </div>
+        <div className="vehicles-list">
+            {vehiclesFiltered.map(vehicle => {
+                return <Vehicle key={vehicle.id} id={vehicle.id} data={vehicle}
+                    showVehicleDetails={() => showVehicleDetails(vehicle.id)}
+                    toggleFavorite={toggleFavorite} />
+            })}
 
-            </div>
-        </section>
+        </div>
+    </>
     )
 }
 
