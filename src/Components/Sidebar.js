@@ -25,18 +25,8 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
     }, [selectedBrands])
     return (
         <aside className="sidebar">
-            <Link className="main-nav-link logo" to="/">
-                <img className="main-nav-logo-img" src={logo} alt="EV Dex logo" />
-                <span className="brand-wrapper">
-                    <span className="brand">EV-DEX</span>
-                    <br />
-                    <span className="motto">Index for EVs</span>
-
-                </span>
-            </Link>
-            <Link className="sub-nav-item location">
-                <img src={homeIcon} alt="Home icon" /> Main Page &gt; <span>Catalog</span></Link>
-            <div className="sidebar-inner-wrapper">
+            
+           
 
                 <RangePicker lowLimit={lowPriceLimit}
                     highLimit={highPriceLimit}
@@ -60,7 +50,7 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
                     step={10}
                     title="Range"
                 />
-                <div style={{ display: "flex", flexDirection: "column", marginTop: "2em", height: "10em", overflowY: "scroll", overflowX: "hidden" }}>
+                <div style={{ display: "flex", flexDirection: "column", marginTop: "2em", height: "30vh", overflowY: "scroll", overflowX: "hidden" }}>
                     {(brands.map(b => {
                         return <Checkbox
                             key={b}
@@ -72,7 +62,7 @@ function Sidebar({ searchSettings, updatePrice,updateRange }) {
                             checked={selectedBrands.some(brand => brand === b)} />
                     }))}
                 </div>
-            </div>
+           
         </aside>
     )
 
