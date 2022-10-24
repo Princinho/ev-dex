@@ -33,7 +33,7 @@ export default function Catalog({ min, max,
 
 
     return (
-    <>
+    <div className="catalog">
         <h1 className="section-title">Catalog</h1>
         <div className="search-bar">
             <input type="text" name="search" value={search} onChange={(e) => { setSearch(e.target.value) }} className="search" placeholder="Search among 100+ EVs">
@@ -52,7 +52,7 @@ export default function Catalog({ min, max,
             })}
 
         </div>
-    </>
+    </div>
     )
 }
 

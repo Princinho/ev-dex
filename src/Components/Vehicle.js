@@ -2,6 +2,7 @@ import React from "react";
 import bag from "../images/shopping-bag.svg"
 import heart from "../images/heart-line.svg"
 import heartFill from "../images/heart-fill.svg"
+import searchOnInternet from "../images/search-internet.svg"
 export default function Vehicle(props) {
 
     const vehicle = props.data
@@ -30,7 +31,7 @@ export default function Vehicle(props) {
                 <span className="vehicle__old-price">{parseInt(vehicle.priceEurDE).toLocaleString("de-DE", { style: "currency", currency: "EUR" })}</span>
                 <span className="vehicle__range-label">Range:</span>
                 <span className="vehicle__range">{vehicle.realRangeKm} km</span>
-                <button className="btn-add-to-cart"><img src={bag} alt="add to cart" /></button>
+                <a className="btn-add-to-cart" onClick={(e)=>e.stopPropagation()} target="_blank" href={`https://www.google.com/search?q= buy+${vehicle.brand}+${vehicle.model}`}><img src={searchOnInternet} alt="Search on google" /></a>
             </div>
         </div>
     )
