@@ -4,9 +4,11 @@ export default function Compare({ carManager }) {
     const [index1, setIndex1] = React.useState(0)
     const [index2, setIndex2] = React.useState(0)
     const [search, setSearch] = React.useState("")
+    const [search2, setSearch2] = React.useState("")
     const [v1, setV1] = React.useState(null)
     const [v2, setV2] = React.useState(null)
     const [vehicles, setVehicles] = React.useState(carManager.vehiclesData)
+    const [vehicles2, setVehicles2] = React.useState(carManager.vehiclesData)
     React.useEffect(() => {
         setV1(vehicles[index1])
         setV2(vehicles[index2])
@@ -52,29 +54,37 @@ export default function Compare({ carManager }) {
         }
         return parseInt(vehicle[key]) / parseInt(getMax(key)) * 100 + "%"
     }
-    console.log(vehicles)
     function updateSearch(e) {
         const searchTerm = e.target.value
-        const filteredVehicles=carManager.vehiclesData.filter(v =>
-            v.model.toLowerCase().includes(search.toLowerCase())
-            || v.brand.toLowerCase().includes(search.toLowerCase()))
-        setSearch(searchTerm)
-        setVehicles(searchTerm==""?carManager.vehiclesData:filteredVehicles)
-        setIndex1(0)
-        setIndex2(0)
-
+        
+        const filteredVehicles = carManager.vehiclesData.filter(v =>
+            v.model.toLowerCase().includes(searchTerm.toLowerCase())
+            || v.brand.toLowerCase().includes(searchTerm.toLowerCase()))
+        if (e.target.name == "search") {
+            setSearch(searchTerm)
+            setVehicles(searchTerm == "" ? carManager.vehiclesData : filteredVehicles)
+            setIndex1(0)
+        } else {
+            setSearch2(searchTerm)
+            setVehicles2(searchTerm == "" ? carManager.vehiclesData : filteredVehicles)
+            setIndex2(0)
+        }
     }
+    // console.log(vehicles2)
     return (
         <section className="section-compare">
-            <input type="text" name="search" onChange={updateSearch} value={search} className="search" style={{ width: "100%" }} placeholder="Search among 100+ EVs" />
+            <div style={{display:"flex",width:"100%",justifyContent:"space-around"}}>
+                <input type="text" name="search" onChange={updateSearch} value={search} className="search" style={{minWidth:"40%"}}  placeholder="Search among 100+ EVs" />
+                <input type="text" name="search2" onChange={updateSearch} value={search2} className="search" style={{minWidth:"40%"}}  placeholder="Search among 100+ EVs" />
+            </div>
             <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <VehiclePicker vehiclesData={vehicles} selectedIndex={index1} setSelected={(index) => {
                     setIndex1(index)
                     setV1(vehicles[index])
                 }} />
-                <VehiclePicker vehiclesData={vehicles} selectedIndex={index2} setSelected={(index) => {
+                <VehiclePicker vehiclesData={vehicles2} selectedIndex={index2} setSelected={(index) => {
                     setIndex2(index)
-                    setV2(vehicles[index])
+                    setV2(vehicles2[index])
                 }} />
             </div>
             {(v2 && v1) &&
