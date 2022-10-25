@@ -20,7 +20,16 @@ export default function Compare({ carManager }) {
 
         }, 0)
     }
+    function getMin(key) {
+        if (!vehicles) return 0
+        return vehicles.reduce((prev, current) => {
+            return parseInt(prev) > parseInt(current[key]) ? current[key] : prev
+
+        }, getMax(key))
+    }
     function getDisplay(key) {
+        const v1 = vehicles[index1]
+        const v2 = vehicles2[index2]
         return (
             <div style={{ display: "flex", marginBlock: "1em", width: "100%", minHeight: "4em", gridColumn: "span 3", backgroundColor: "#ddd" }}>
 
@@ -36,7 +45,8 @@ export default function Compare({ carManager }) {
                     <div style={{
                         width: getWidth(v2, key),
                         display: "flex", justifyContent: "space-between",
-                        minHeight: "2em", backgroundColor: "var(--clr-primary-dark)", color: "white", paddingInline: "1em"
+                        minHeight: "2em", backgroundColor: "var(--clr-primary-dark)", textShadow: "0px 0px 3px var(--clr-primary-dark),0px 0px 6px var(--clr-primary-dark)",
+                        color: "white", paddingInline: "1em"
                     }}>
                         <span>{v2.brand} {v2.model}</span>
                         <span>{v2[key]}</span>
@@ -46,17 +56,27 @@ export default function Compare({ carManager }) {
             </div>
         )
     }
+    function getMaxAcceleration() {
+        if (!vehicles) return 0
+        return vehicles.reduce((prev, current) => {
+            const acc = 100 / current.accelerationSec
+            return acc > prev ? acc : prev
 
+        }, 0)
+    }
     function getWidth(vehicle, key) {
         if (key == 'accelerationSec') {
-            const result = (parseFloat(getMax(key)) - parseFloat(vehicle[key])) / parseFloat(getMax(key)) * 100 + "%"
+            const acc = (100 / vehicle[key])
+            const maxAcc = getMaxAcceleration()
+            console.log("Acc is " + acc, "maxAcc acc " + maxAcc)
+            const result = (acc / maxAcc * 100)+"%"
             return result
         }
-        return parseInt(vehicle[key]) / parseInt(getMax(key)) * 100 + "%"
+        return (parseInt(vehicle[key]) / parseInt(getMax(key)) * 100).toFixed(2) + "%"
     }
     function updateSearch(e) {
         const searchTerm = e.target.value
-        
+
         const filteredVehicles = carManager.vehiclesData.filter(v =>
             v.model.toLowerCase().includes(searchTerm.toLowerCase())
             || v.brand.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -64,18 +84,19 @@ export default function Compare({ carManager }) {
             setSearch(searchTerm)
             setVehicles(searchTerm == "" ? carManager.vehiclesData : filteredVehicles)
             setIndex1(0)
+            setV1(filteredVehicles[0])
         } else {
             setSearch2(searchTerm)
             setVehicles2(searchTerm == "" ? carManager.vehiclesData : filteredVehicles)
             setIndex2(0)
+            setV2(filteredVehicles[0])
         }
     }
-    // console.log(vehicles2)
     return (
         <section className="section-compare">
-            <div style={{display:"flex",width:"100%",justifyContent:"space-around"}}>
-                <input type="text" name="search" onChange={updateSearch} value={search} className="search" style={{minWidth:"40%"}}  placeholder="Search among 100+ EVs" />
-                <input type="text" name="search2" onChange={updateSearch} value={search2} className="search" style={{minWidth:"40%"}}  placeholder="Search among 100+ EVs" />
+            <div style={{ display: "flex", width: "100%", justifyContent: "space-around" }}>
+                <input type="text" name="search" onChange={updateSearch} value={search} className="search" style={{ minWidth: "40%" }} placeholder="Search among 100+ EVs" />
+                <input type="text" name="search2" onChange={updateSearch} value={search2} className="search" style={{ minWidth: "40%" }} placeholder="Search among 100+ EVs" />
             </div>
             <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <VehiclePicker vehiclesData={vehicles} selectedIndex={index1} setSelected={(index) => {
