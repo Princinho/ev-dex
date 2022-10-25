@@ -5,7 +5,6 @@ import rightArrow from "../images/arrow-right-s-line.svg"
 import BasicVehicle from "./BasicVehicle";
 export default function VehiclePicker({ vehiclesData, setSelected, selectedIndex }) {
     const vehicle = vehiclesData[selectedIndex]
-
     function selectPrevVehicle() {
         setSelected(selectedIndex - 1 > 0 ? selectedIndex - 1 : 0)
     }

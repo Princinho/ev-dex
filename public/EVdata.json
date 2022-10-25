@@ -67,7 +67,7 @@
       "efficiencyWhPerKm": "181",
       "fastChargeSpeedPerHr": "310",
       "priceEurDE": "29899",
-      "priceEurNL": " €30400",
+      "priceEurNL": "30400",
       "priceEurUK": "N/A",
       "id": "pMEnM0xVLnp6cH0X1f28g"
   },
@@ -187,8 +187,8 @@
       "efficiencyWhPerKm": "164",
       "fastChargeSpeedPerHr": "410",
       "priceEurDE": "32700",
-      "priceEurNL": " €35000",
-      "priceEurUK": " £32000",
+      "priceEurNL": "35000",
+      "priceEurUK": "32000",
       "id": "xyDCGh4OP2CEhz-Fqraur"
   },
   {
@@ -642,8 +642,8 @@
       "realRangeKm": "385",
       "efficiencyWhPerKm": "200",
       "fastChargeSpeedPerHr": "530",
-      "priceEurDE": " €50000",
-      "priceEurNL": " €60000",
+      "priceEurDE": "50000",
+      "priceEurNL": "60000",
       "priceEurUK": "N/A",
       "id": "_wWDMW7aLygZ23An9A0v-"
   },
@@ -811,8 +811,8 @@
       "efficiencyWhPerKm": "226",
       "fastChargeSpeedPerHr": "460",
       "priceEurDE": "N/A",
-      "priceEurNL": " €66000",
-      "priceEurUK": " £60000",
+      "priceEurNL": "66000",
+      "priceEurUK": "60000",
       "id": "PooNmoaYSRaLhQS-HjL3k"
   },
   {
@@ -882,8 +882,8 @@
       "realRangeKm": "665",
       "efficiencyWhPerKm": "168",
       "fastChargeSpeedPerHr": "840",
-      "priceEurDE": " €175000",
-      "priceEurNL": " €175000",
+      "priceEurDE": "175000",
+      "priceEurNL": "175000",
       "priceEurUK": "N/A",
       "id": "E4ZjWpuQEhx7GPeVIjEx0"
   },
@@ -906,8 +906,8 @@
       "realRangeKm": "550",
       "efficiencyWhPerKm": "160",
       "fastChargeSpeedPerHr": "960",
-      "priceEurDE": " €120000",
-      "priceEurNL": " €120000",
+      "priceEurDE": "120000",
+      "priceEurNL": "120000",
       "priceEurUK": "N/A",
       "id": "3qjCuRIezeFYUO3Hbebrs"
   },
@@ -930,8 +930,8 @@
       "realRangeKm": "560",
       "efficiencyWhPerKm": "157",
       "fastChargeSpeedPerHr": "980",
-      "priceEurDE": " €100000",
-      "priceEurNL": " €100000",
+      "priceEurDE": "100000",
+      "priceEurNL": "100000",
       "priceEurUK": "N/A",
       "id": "1YUZIhn_QYmMYOcyiMAYy"
   },
@@ -1434,9 +1434,9 @@
       "realRangeKm": "585",
       "efficiencyWhPerKm": "162",
       "fastChargeSpeedPerHr": "810",
-      "priceEurDE": " €105000",
-      "priceEurNL": " €105000",
-      "priceEurUK": " £90000",
+      "priceEurDE": "105000",
+      "priceEurNL": "105000",
+      "priceEurUK": "90000",
       "id": "3fThVPDw9UgslSLS4m5X3"
   },
   {
@@ -1460,7 +1460,7 @@
       "fastChargeSpeedPerHr": "780",
       "priceEurDE": "138970",
       "priceEurNL": "140995",
-      "priceEurUK": " £120000",
+      "priceEurUK": "120000",
       "id": "-J8BgL93n_ppJLztTa6T-"
   },
   {
@@ -1482,9 +1482,9 @@
       "realRangeKm": "480",
       "efficiencyWhPerKm": "198",
       "fastChargeSpeedPerHr": "670",
-      "priceEurDE": " €110000",
-      "priceEurNL": " €110000",
-      "priceEurUK": " £95000",
+      "priceEurDE": "110000",
+      "priceEurNL": "110000",
+      "priceEurUK": "95000",
       "id": "cppCpCBRSt0Q_MxuRuVkI"
   },
   {
@@ -1508,7 +1508,7 @@
       "fastChargeSpeedPerHr": "640",
       "priceEurDE": "141970",
       "priceEurNL": "144995",
-      "priceEurUK": " £125000",
+      "priceEurUK": "125000",
       "id": "2HxFODG5-nM-vCCmyHYns"
   },
   {
@@ -4194,9 +4194,9 @@
       "realRangeKm": "335",
       "efficiencyWhPerKm": "173",
       "fastChargeSpeedPerHr": "450",
-      "priceEurDE": " €42000",
+      "priceEurDE": "42000",
       "priceEurNL": "51690",
-      "priceEurUK": " £40000",
+      "priceEurUK": "40000",
       "id": "jQqC3a0SVZSH1EGvMR3dE"
   },
   {
@@ -4218,9 +4218,9 @@
       "realRangeKm": "445",
       "efficiencyWhPerKm": "173",
       "fastChargeSpeedPerHr": "560",
-      "priceEurDE": " €47000",
+      "priceEurDE": "47000",
       "priceEurNL": "56890",
-      "priceEurUK": " £45000",
+      "priceEurUK": "45000",
       "id": "yDb-Ti9NHj6uFKPAVETdn"
   },
   {
@@ -4242,9 +4242,9 @@
       "realRangeKm": "430",
       "efficiencyWhPerKm": "179",
       "fastChargeSpeedPerHr": "540",
-      "priceEurDE": " €49000",
+      "priceEurDE": "49000",
       "priceEurNL": "N/A",
-      "priceEurUK": " £52000",
+      "priceEurUK": "52000",
       "id": "u_3nU1hZf_RXgTkRDdxcl"
   },
   {
@@ -4314,7 +4314,7 @@
       "realRangeKm": "390",
       "efficiencyWhPerKm": "190",
       "fastChargeSpeedPerHr": "1020",
-      "priceEurDE": " €53000",
+      "priceEurDE": "53000",
       "priceEurNL": "N/A",
       "priceEurUK": "47005",
       "id": "VZ5gBLVH4SoB0NAlYpOxi"
@@ -4748,7 +4748,7 @@
       "fastChargeSpeedPerHr": "520",
       "priceEurDE": "41490",
       "priceEurNL": "41395",
-      "priceEurUK": " £35000",
+      "priceEurUK": "35000",
       "id": "MmYVJ9xMrUpPRhPgZKJrG"
   },
   {
@@ -4892,7 +4892,7 @@
       "fastChargeSpeedPerHr": "650",
       "priceEurDE": "110658",
       "priceEurNL": "120827",
-      "priceEurUK": " £110000",
+      "priceEurUK": "110000",
       "id": "2gFlcEGKpszXSK1JBs_OR"
   },
   {
@@ -4916,7 +4916,7 @@
       "fastChargeSpeedPerHr": "630",
       "priceEurDE": "114446",
       "priceEurNL": "127845",
-      "priceEurUK": " £120000",
+      "priceEurUK": "120000",
       "id": "izzKDCIF2g4STCFRDJ0hB"
   },
   {
@@ -4940,7 +4940,7 @@
       "fastChargeSpeedPerHr": "630",
       "priceEurDE": "135291",
       "priceEurNL": "167291",
-      "priceEurUK": " £140000",
+      "priceEurUK": "140000",
       "id": "9XpVg5uBhqHaUQ86Cpwtj"
   },
   {
@@ -4986,9 +4986,9 @@
       "realRangeKm": "350",
       "efficiencyWhPerKm": "204",
       "fastChargeSpeedPerHr": "450",
-      "priceEurDE": " €60000",
+      "priceEurDE": "60000",
       "priceEurNL": "64595",
-      "priceEurUK": " £55000",
+      "priceEurUK": "55000",
       "id": "uU4vDIb_L3PUmOGOj9TyQ"
   },
   {
@@ -5035,7 +5035,7 @@
       "efficiencyWhPerKm": "156",
       "fastChargeSpeedPerHr": "360",
       "priceEurDE": "N/A",
-      "priceEurNL": " €48000",
+      "priceEurNL": "48000",
       "priceEurUK": "N/A",
       "id": "Kd8Xq1DcMdT7UvVofPB4N"
   },
@@ -5298,8 +5298,8 @@
       "realRangeKm": "270",
       "efficiencyWhPerKm": "167",
       "fastChargeSpeedPerHr": "430",
-      "priceEurDE": " €38000",
-      "priceEurNL": " €42000",
+      "priceEurDE": "38000",
+      "priceEurNL": "42000",
       "priceEurUK": "N/A",
       "id": "B4BIJMpE7ILdzc4SsyRzE"
   },
@@ -5323,7 +5323,7 @@
       "efficiencyWhPerKm": "169",
       "fastChargeSpeedPerHr": "340",
       "priceEurDE": "31990",
-      "priceEurNL": " €30000",
+      "priceEurNL": "30000",
       "priceEurUK": "25995",
       "id": "HXvKN4G9PYw7mVy5N541R"
   },
@@ -5347,7 +5347,7 @@
       "efficiencyWhPerKm": "169",
       "fastChargeSpeedPerHr": "450",
       "priceEurDE": "35990",
-      "priceEurNL": " €34000",
+      "priceEurNL": "34000",
       "priceEurUK": "28495",
       "id": "yGTOR35bntIugM9tynD67"
   },
@@ -5562,9 +5562,9 @@
       "realRangeKm": "360",
       "efficiencyWhPerKm": "150",
       "fastChargeSpeedPerHr": "880",
-      "priceEurDE": " €45000",
-      "priceEurNL": " €48000",
-      "priceEurUK": " £44000",
+      "priceEurDE": "45000",
+      "priceEurNL": "48000",
+      "priceEurUK": "44000",
       "id": "OdzYFPTMNFZbcyBRY9Jmb"
   },
   {
@@ -5586,9 +5586,9 @@
       "realRangeKm": "485",
       "efficiencyWhPerKm": "153",
       "fastChargeSpeedPerHr": "1270",
-      "priceEurDE": " €50000",
-      "priceEurNL": " €52000",
-      "priceEurUK": " £47500",
+      "priceEurDE": "50000",
+      "priceEurNL": "52000",
+      "priceEurUK": "47500",
       "id": "5t5k8bHDK0i5pLVvUZ7Ar"
   },
   {
@@ -5610,9 +5610,9 @@
       "realRangeKm": "470",
       "efficiencyWhPerKm": "157",
       "fastChargeSpeedPerHr": "1230",
-      "priceEurDE": " €62000",
-      "priceEurNL": " €60000",
-      "priceEurUK": " £52000",
+      "priceEurDE": "62000",
+      "priceEurNL": "60000",
+      "priceEurUK": "52000",
       "id": "zVkqeh0oPAdTY8M7Jq2iS"
   },
   {
@@ -5850,9 +5850,9 @@
       "realRangeKm": "310",
       "efficiencyWhPerKm": "165",
       "fastChargeSpeedPerHr": "460",
-      "priceEurDE": " €44000",
-      "priceEurNL": " €44000",
-      "priceEurUK": " £37000",
+      "priceEurDE": "44000",
+      "priceEurNL": "44000",
+      "priceEurUK": "37000",
       "id": "b3lqhj8iWbnDZOBjw3ed2"
   },
   {
@@ -5874,9 +5874,9 @@
       "realRangeKm": "300",
       "efficiencyWhPerKm": "170",
       "fastChargeSpeedPerHr": "450",
-      "priceEurDE": " €45000",
-      "priceEurNL": " €45000",
-      "priceEurUK": " £38000",
+      "priceEurDE": "45000",
+      "priceEurNL": "45000",
+      "priceEurUK": "38000",
       "id": "6-Lf--JjclTCTRa8GKt-N"
   },
   {
@@ -5948,7 +5948,7 @@
       "fastChargeSpeedPerHr": "500",
       "priceEurDE": "48990",
       "priceEurNL": "48895",
-      "priceEurUK": " £42000",
+      "priceEurUK": "42000",
       "id": "NMos8T0Bujt2vkPoztIii"
   },
   {
