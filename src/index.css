@@ -491,3 +491,20 @@ header{
   width: 50%;
 }
 
+.section-compare{
+  
+  grid-column-start: 2;
+}
+.vehicle-picker{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.vehicle-picker > button{
+  padding: 1em;
+  cursor: pointer;
+}
+.vehicle-wrapper{
+  width: fit-content;
+}

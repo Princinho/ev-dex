@@ -38,7 +38,7 @@ function App() {
           />}
         <Routes>
           <Route exact path='/Wishlist' element={<Wishlist carManager={carManager} />} />
-          <Route exact path='/Compare' element={<Compare />} />
+          <Route exact path='/Compare' element={<Compare carManager={carManager} />} />
           <Route exact path='/' element={<Home carManager={carManager} />} />
         </Routes>
       </section>
